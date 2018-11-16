@@ -1,0 +1,182 @@
+@prefix : <http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3> .
+
+<http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aJoueDans
+:aJoueDans rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :aTravailleDans .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourActeur
+:aPourActeur rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :aPourTravailleur .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourDuree
+:aPourDuree rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourGenre
+:aPourGenre rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourRealisateur
+:aPourRealisateur rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :aPourTravailleur .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourTravailleur
+:aPourTravailleur rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aRealise
+:aRealise rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :aTravailleDans .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aRecuRecompense
+:aRecuRecompense rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aTravailleDans
+:aTravailleDans rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#dfsafsd
+:dfsafsd rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#estSortiEn
+:estSortiEn rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Acteur
+:Acteur rdf:type owl:Class ;
+        rdfs:subClassOf :TravailleurDuCinema .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Aventure
+:Aventure rdf:type owl:Class ;
+          rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Blockbuster
+:Blockbuster rdf:type owl:Class ;
+             rdfs:subClassOf :LongMetrage .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Cesar
+:Cesar rdf:type owl:Class ;
+       rdfs:subClassOf :Recompense ;
+       owl:disjointUnionOf ( :Oscar
+                             :Palme
+                           ) .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Comedie
+:Comedie rdf:type owl:Class ;
+         rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#CourtMetrage
+:CourtMetrage rdf:type owl:Class ;
+              rdfs:subClassOf :Realisation ;
+              owl:disjointUnionOf ( :LongMetrage
+                                    :Serie
+                                  ) .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Drame
+:Drame rdf:type owl:Class ;
+       rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Fantastique
+:Fantastique rdf:type owl:Class ;
+             rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Genre
+:Genre rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Horreur
+:Horreur rdf:type owl:Class ;
+         rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#LongMetrage
+:LongMetrage rdf:type owl:Class ;
+             rdfs:subClassOf :Realisation ;
+             owl:disjointUnionOf ( :CourtMetrage
+                                   :Serie
+                                 ) .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Oscar
+:Oscar rdf:type owl:Class ;
+       rdfs:subClassOf :Recompense ;
+       owl:disjointUnionOf ( :Cesar
+                             :Palme
+                           ) .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Palme
+:Palme rdf:type owl:Class ;
+       rdfs:subClassOf :Recompense ;
+       owl:disjointUnionOf ( :Cesar
+                             :Oscar
+                           ) .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Realisateur
+:Realisateur rdf:type owl:Class ;
+             rdfs:subClassOf :TravailleurDuCinema .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Realisation
+:Realisation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Recompense
+:Recompense rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#ScienceFiction
+:ScienceFiction rdf:type owl:Class ;
+                rdfs:subClassOf :Genre .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Serie
+:Serie rdf:type owl:Class ;
+       rdfs:subClassOf :Realisation ;
+       owl:disjointUnionOf ( :CourtMetrage
+                             :LongMetrage
+                           ) .
+
+
+###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#TravailleurDuCinema
+:TravailleurDuCinema rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
