@@ -1,182 +1,930 @@
-@prefix : <http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3> .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#"
+     xml:base="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#compose -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#compose">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#workOn"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#composedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Composer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>indique le film pour lequel une personne a composé</rdfs:comment>
+        <rdfs:label>a composé pour</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#composedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#composedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasWorker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Composer"/>
+        <rdfs:comment>Indique la personne ayant composé la musique pour ce film.</rdfs:comment>
+        <rdfs:label>musique composée par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#direct -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#direct">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#workOn"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#directedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Director"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>indique le film pour lequel une personne a été réalisatrice</rdfs:comment>
+        <rdfs:label>a réalisé</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#directedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#directedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasWorker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Director"/>
+        <rdfs:comment>Indique la personne ayant réalisé le film</rdfs:comment>
+        <rdfs:label>réalisé par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#for">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Award"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>Indique le film pour lequel une récompense a ete recue.</rdfs:comment>
+        <rdfs:label>recue pour</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Indique une caractéristique associée a un genre de film.</rdfs:comment>
+        <rdfs:label>A comme caractéristique</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasWorker -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasWorker">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#workOn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#CinemaWorker"/>
+        <rdfs:comment>Indique qu&apos;une personne a travaillé sur ce film</rdfs:comment>
+        <rdfs:label>A travailleur de cinema</rdfs:label>
+    </owl:ObjectProperty>
+    
 
-<http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3> rdf:type owl:Ontology .
 
-#################################################################
-#    Object Properties
-#################################################################
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ofCompetition -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aJoueDans
-:aJoueDans rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :aTravailleDans .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ofCompetition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Award"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Competition"/>
+        <rdfs:comment>Indique a quelle compétition est rattachée la récompense</rdfs:comment>
+        <rdfs:label>de la compétition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#produce -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#produce">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#workOn"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#producedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Producer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>indique le film que la personne a produit</rdfs:comment>
+        <rdfs:label>a produit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#producedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#producedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasWorker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Producer"/>
+        <rdfs:comment>Indique la personne ayant produit le film</rdfs:comment>
+        <rdfs:label>produit par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#starred -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#starred">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#workOn"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#starring"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>Indique le film dans lequel la personne a joué</rdfs:comment>
+        <rdfs:label>a joué dans</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#starring -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#starring">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasWorker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Actor"/>
+        <rdfs:comment>Indique un acteur ayant participé au film</rdfs:comment>
+        <rdfs:label>met en scene</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#won -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#won">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#CinemaWorker"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Award"/>
+        <rdfs:comment>Indique la récompense ayant été remportée par un travailleur du cinéma</rdfs:comment>
+        <rdfs:label>a gagné</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#workOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#workOn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#CinemaWorker"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>indique le film pour lequel une personne a travaillé</rdfs:comment>
+        <rdfs:label>a travaillé sur</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Action">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Conflict"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Violence"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>Un film de genre Action</rdfs:comment>
+        <rdfs:label>Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Actor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#starred"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#CinemaWorker"/>
+        <rdfs:comment>Une personne jouant un rôle dans un film</rdfs:comment>
+        <rdfs:label>Acteur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Adventure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Adventure">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Hero"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Quest"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>Un film de genre aventure</rdfs:comment>
+        <rdfs:label>Aventure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Aliens -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Aliens">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScientificAnticipation"/>
+        <rdfs:comment>Créatures venant d&apos;une planete différente de la terre</rdfs:comment>
+        <rdfs:label>Extraterrestres</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Award -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Award">
+        <rdfs:comment>Une récompense donnée a un film ou a un agent crédité dans film.</rdfs:comment>
+        <rdfs:label>Récompense Cinématographique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#BestActor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#BestActor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Award"/>
+        <rdfs:comment>Récompense du meilleur acteur d&apos;un film.</rdfs:comment>
+        <rdfs:label>Meilleur Acteur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#BestDirector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#BestDirector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Award"/>
+        <rdfs:comment>Récompense du meilleur réalisateur de films</rdfs:comment>
+        <rdfs:label>Meilleur Réalisateur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#BestMusic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#BestMusic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Award"/>
+        <rdfs:comment>Récompense de la meilleure musique décernée a un compositeur.</rdfs:comment>
+        <rdfs:label>Meilleure Musique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Biography -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Biography">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#RealPerson"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Un film traitant de la vie d&apos;une personne ayant réellement existé.</rdfs:comment>
+        <rdfs:label>Biographie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic">
+        <rdfs:comment>Une caractéristique d&apos;un film. Il peut s&apos;agir de themes ou de la forme d&apos;un film.</rdfs:comment>
+        <rdfs:label>Caractéristique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#CinemaWorker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#CinemaWorker">
+        <rdfs:comment>Un travailleur du cinéma</rdfs:comment>
+        <rdfs:label>Travailleur du cinéma</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Competition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Competition">
+        <rdfs:comment>Classe regroupant les différentes compétitions cinématographiques.</rdfs:comment>
+        <rdfs:label>Compétition Cinématographique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Composer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Composer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#compose"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#CinemaWorker"/>
+        <rdfs:comment>La personne composant la musique d&apos;un film</rdfs:comment>
+        <rdfs:label>Compositeur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Conflict -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Conflict">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Rapport de forces</rdfs:comment>
+        <rdfs:label>Conflit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Director -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Director">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#direct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#CinemaWorker"/>
+        <rdfs:comment>La personne en charge de réaliser un film</rdfs:comment>
+        <rdfs:label>Réalisateur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Drama -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Drama">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#SeriousTheme"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>Un film dramatique.</rdfs:comment>
+        <rdfs:label>Drame</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Fantastic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Fantastic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>Un film de genre fantastique</rdfs:comment>
+        <rdfs:label>Fantastique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Fantasy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Fantasy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>Un film de fantaisie</rdfs:comment>
+        <rdfs:label>Fantaisie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Future -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Future">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Ensemble des configurations possibles aui n&apos;existent pas encore</rdfs:comment>
+        <rdfs:label>Futur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Hero -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Hero">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Personne réelle ou fictive de l&apos;histoire dont les hauts faits méritent qu&apos;on les raconte.</rdfs:comment>
+        <rdfs:label>Héros</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Historic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Historic">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#HistoricalFacts"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>Un film traitant de faits historiques</rdfs:comment>
+        <rdfs:label>Historique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#HistoricalFacts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#HistoricalFacts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Le film traite de faits historiques (ayant réellement eu lieu).</rdfs:comment>
+        <rdfs:label>Faits Historiques</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LoveStory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LoveStory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Histoire entre deux amants</rdfs:comment>
+        <rdfs:label>Histoire d&apos;amour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie">
+        <rdfs:comment>Un film</rdfs:comment>
+        <rdfs:label>Film</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Producer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Producer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#produce"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#CinemaWorker"/>
+        <rdfs:comment>La personne chargée de donner les financements a un film</rdfs:comment>
+        <rdfs:label>Producteur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Quest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Quest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Objectif d&apos;une aventure</rdfs:comment>
+        <rdfs:label>Quête</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#RealPerson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#RealPerson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Personne existant réellement dans le monde.</rdfs:comment>
+        <rdfs:label>Personne Réelle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Romance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Romance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LoveStory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Un film de romance</rdfs:comment>
+        <rdfs:label>Romance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScienceFiction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScienceFiction">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScientificAnticipation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:comment>Un film de science-fiction</rdfs:comment>
+        <rdfs:label>Science Fiction</rdfs:label>
+    </owl:Class>
+    
+
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScientificAnticipation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScientificAnticipation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Le film contient des descriptions scientifiques spéculatives.</rdfs:comment>
+        <rdfs:label>Anticipation Scientifique</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourActeur
-:aPourActeur rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :aPourTravailleur .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#SeriousTheme -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourDuree
-:aPourDuree rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty .
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#SeriousTheme">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Le film traite de sujets sérieux et dramatiques : mort, guerre, incidents ...</rdfs:comment>
+        <rdfs:label>Theme Grave</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourGenre
-:aPourGenre rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty .
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StrongAI -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StrongAI">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScientificAnticipation"/>
+        <rdfs:comment>IA de niveau Humain ou supérieur</rdfs:comment>
+        <rdfs:label>IA Forte</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourRealisateur
-:aPourRealisateur rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :aPourTravailleur .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Suspense -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aPourTravailleur
-:aPourTravailleur rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf owl:topObjectProperty .
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Suspense">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>émotion esthétique associée a une mise en intrigue dans laquelle le public est encouragé a anticiper le développement ultérieur d&apos;une action incertaine</rdfs:comment>
+        <rdfs:label>Suspense</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aRealise
-:aRealise rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :aTravailleDans .
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Thriller -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Thriller">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#hasCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Suspense"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Un film de genre thriller</rdfs:comment>
+        <rdfs:label>Thriller</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aRecuRecompense
-:aRecuRecompense rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TimeTravel -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#aTravailleDans
-:aTravailleDans rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty .
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TimeTravel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScientificAnticipation"/>
+        <rdfs:comment>Voyage dans le temps</rdfs:comment>
+        <rdfs:label>Voyage dans le temps</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#dfsafsd
-:dfsafsd rdf:type owl:ObjectProperty .
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Violence -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Violence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Utilisation de force ou de pouvoir physique ou psychique pour contraindre, dominer, tuer, détruire ou endommager.</rdfs:comment>
+        <rdfs:label>Violence</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#estSortiEn
-:estSortiEn rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#War -->
 
-#################################################################
-#    Classes
-#################################################################
+    <owl:Class rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#War">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Characteristic"/>
+        <rdfs:comment>Conflit armé entre groupes</rdfs:comment>
+        <rdfs:label>Guerre</rdfs:label>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Acteur
-:Acteur rdf:type owl:Class ;
-        rdfs:subClassOf :TravailleurDuCinema .
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Aventure
-:Aventure rdf:type owl:Class ;
-          rdfs:subClassOf :Genre .
+    
 
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Blockbuster
-:Blockbuster rdf:type owl:Class ;
-             rdfs:subClassOf :LongMetrage .
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#FestivalDeCannes -->
 
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#FestivalDeCannes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Competition"/>
+    </owl:NamedIndividual>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Cesar
-:Cesar rdf:type owl:Class ;
-       rdfs:subClassOf :Recompense ;
-       owl:disjointUnionOf ( :Oscar
-                             :Palme
-                           ) .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#Oscar1994BestDirector -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Comedie
-:Comedie rdf:type owl:Class ;
-         rdfs:subClassOf :Genre .
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#Oscar1994BestDirector">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#BestDirector"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#CourtMetrage
-:CourtMetrage rdf:type owl:Class ;
-              rdfs:subClassOf :Realisation ;
-              owl:disjointUnionOf ( :LongMetrage
-                                    :Serie
-                                  ) .
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#Oscars -->
 
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#Oscars">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Competition"/>
+    </owl:NamedIndividual>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Drame
-:Drame rdf:type owl:Class ;
-       rdfs:subClassOf :Genre .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#DanielDay-Lewis -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Fantastique
-:Fantastique rdf:type owl:Class ;
-             rdfs:subClassOf :Genre .
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#DanielDay-Lewis">
+        <starred rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln"/>
+        <won rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2013BestActor"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Genre
-:Genre rdf:type owl:Class .
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#FantasticBeasts -->
 
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#FantasticBeasts">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Fantastic"/>
+    </owl:NamedIndividual>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Horreur
-:Horreur rdf:type owl:Class ;
-         rdfs:subClassOf :Genre .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#IndianaJones -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#LongMetrage
-:LongMetrage rdf:type owl:Class ;
-             rdfs:subClassOf :Realisation ;
-             owl:disjointUnionOf ( :CourtMetrage
-                                   :Serie
-                                 ) .
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#IndianaJones">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Adventure"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Fantastic"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Oscar
-:Oscar rdf:type owl:Class ;
-       rdfs:subClassOf :Recompense ;
-       owl:disjointUnionOf ( :Cesar
-                             :Palme
-                           ) .
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnWilliams -->
 
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnWilliams">
+        <compose rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#IndianaJones"/>
+        <compose rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln"/>
+        <compose rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StarWars"/>
+        <compose rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#WarOfTheWorlds"/>
+    </owl:NamedIndividual>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Palme
-:Palme rdf:type owl:Class ;
-       rdfs:subClassOf :Recompense ;
-       owl:disjointUnionOf ( :Cesar
-                             :Oscar
-                           ) .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnnyDepp -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Realisateur
-:Realisateur rdf:type owl:Class ;
-             rdfs:subClassOf :TravailleurDuCinema .
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnnyDepp">
+        <starred rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#FantasticBeasts"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Realisation
-:Realisation rdf:type owl:Class .
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LeonardoDicaprio -->
 
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LeonardoDicaprio">
+        <starred rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TheRevenant"/>
+        <starred rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Titanic"/>
+        <won rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2016BestActor"/>
+    </owl:NamedIndividual>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Recompense
-:Recompense rdf:type owl:Class .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln -->
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#ScienceFiction
-:ScienceFiction rdf:type owl:Class ;
-                rdfs:subClassOf :Genre .
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Biography"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Drama"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Historic"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#Serie
-:Serie rdf:type owl:Class ;
-       rdfs:subClassOf :Realisation ;
-       owl:disjointUnionOf ( :CourtMetrage
-                             :LongMetrage
-                           ) .
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LordOfTheRings -->
 
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LordOfTheRings">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Fantasy"/>
+    </owl:NamedIndividual>
+    
 
-###  http://www.semanticweb.org/jelacs/ontologies/2018/10/untitled-ontology-3#TravailleurDuCinema
-:TravailleurDuCinema rdf:type owl:Class .
 
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2013BestActor -->
 
-###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2013BestActor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#BestActor"/>
+        <for rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln"/>
+        <ofCompetition rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#Oscars"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2016BestActor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2016BestActor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#BestActor"/>
+        <for rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TheRevenant"/>
+        <ofCompetition rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#Oscars"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ReadyPlayerOne -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ReadyPlayerOne">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScienceFiction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StarWars -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StarWars">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScienceFiction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StevenSpielberg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StevenSpielberg">
+        <direct rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#IndianaJones"/>
+        <direct rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln"/>
+        <direct rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ReadyPlayerOne"/>
+        <direct rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#WarOfTheWorlds"/>
+        <produce rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln"/>
+        <won rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#Oscar1994BestDirector"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TheRevenant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TheRevenant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Adventure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Titanic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Titanic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Drama"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Historic"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Romance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#WarOfTheWorlds -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#WarOfTheWorlds">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ScienceFiction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#FestivalDeCannes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#Oscar1994BestDirector"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/cinema#Oscars"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#DanielDay-Lewis"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#FantasticBeasts"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#IndianaJones"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnWilliams"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnnyDepp"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LeonardoDicaprio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LordOfTheRings"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2013BestActor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2016BestActor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ReadyPlayerOne"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StarWars"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StevenSpielberg"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TheRevenant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Titanic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#WarOfTheWorlds"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#DanielDay-Lewis"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#FantasticBeasts"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#IndianaJones"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnWilliams"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnnyDepp"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LeonardoDicaprio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LordOfTheRings"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2013BestActor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2016BestActor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ReadyPlayerOne"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StarWars"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StevenSpielberg"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TheRevenant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Titanic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#WarOfTheWorlds"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#FantasticBeasts"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#IndianaJones"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnWilliams"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnnyDepp"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LeonardoDicaprio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LordOfTheRings"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Oscar2016BestActor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ReadyPlayerOne"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StarWars"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StevenSpielberg"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TheRevenant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Titanic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#WarOfTheWorlds"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#FantasticBeasts"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#IndianaJones"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnWilliams"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#JohnnyDepp"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LeonardoDicaprio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Lincoln"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#LordOfTheRings"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#ReadyPlayerOne"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StarWars"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#StevenSpielberg"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#TheRevenant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#Titanic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pamicd/ontologies/2018/10/untitled-ontology-4#WarOfTheWorlds"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi -->
+
